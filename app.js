@@ -36,13 +36,17 @@ function deleteCheck(e){
   const item = e.target;
   if(item.classList[0] === 'trash-btn'){
     const todo = item.parentElement;
-    todo.classList.add("fall")
+    todo.classList.add("fall");
+    setTimeout(deleteItem, 300, todo);
   }
 
   if(item.classList[0] === 'completed-btn'){
     const todo = item.parentElement;
     todo.classList.toggle("completed");
   }
+}
+function deleteItem(todo){
+  todo.remove()
 }
 
 function updateClock(){
